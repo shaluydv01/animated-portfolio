@@ -1,0 +1,20 @@
+<div id="page2-content">
+          <div id="top-content">
+            <h1>A Fullstack Developer</h1>
+            <h1>Bhavya Bansal</h1>
+          </div>
+          <hr />
+          <div id="page2-int">
+            
+          </div>
+        </div>
+
+The issue you're experiencing when using Locomotive Scroll alongside GSAP animations likely stems from how these two libraries interact. Locomotive Scroll modifies the scroll behavior of the page (often using its own scrolling container), and when combined with GSAP's ScrollTrigger, this can lead to conflicts because GSAP's ScrollTrigger expects the normal browser scroll behavior.
+
+Solution:
+To fix the problem, you need to tell GSAP's ScrollTrigger to work with Locomotive Scroll's custom scroll behavior. This can be done by providing the scroll container to ScrollTrigger and ensuring that both libraries work in harmony.
+
+Steps:
+Initialize Locomotive Scroll on a scroll container (usually #main or body).
+Sync GSAP's ScrollTrigger with Locomotive Scroll by passing the scroll instance to ScrollTrigger using scroller: ".smooth-scroll" (or the equivalent selector of your scroll container).
+Update ScrollTrigger when Locomotive Scroll updates, so the animations work with the custom scroll behavior.

@@ -1,0 +1,564 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow-y: auto; /* Allow vertical scroll */
+}
+
+#main {
+  width: 100%;
+  height: 100%;
+}
+
+#page1 {
+  width: 100%;
+  height: 100vh;
+  background-color: #dadada;
+  position: relative;
+}
+
+#hiddenNav{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 24px;
+    width: 50%;
+    height: 100vh;
+    background: #333;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+#hiddenNav a{
+    color: white;
+    text-decoration: none;
+}
+
+#hiddenNav a:hover{
+    color: red;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+#closeTag{
+    position: fixed;
+    top: 1%;
+    left: 55%;
+}
+
+#closeTag img{
+    width: 32px;
+    background: white;
+}
+
+#closeTag img:hover{
+    background: red;
+    transform: scale(1.1);
+}
+
+#cursor {
+  height: 8vw; /* Adjust size */
+  width: 8vw; /* Adjust size */
+  background-color: rgb(245, 51, 89);
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  /* pointer-events: none;  Prevent cursor from interfering with other elements */
+}
+
+#cursor h5 {
+  font-size: 1.15vw;
+}
+
+#page1 video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+#page1-content {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 3vw;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vw 4vw;
+}
+
+nav h3 {
+  font-size: 1.5vw;
+}
+
+#page1-content h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 30vw;
+  line-height: 30vw;
+}
+
+#page1-content h1 span {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+#page2 {
+  width: 100%;
+  height: 105vh;
+  padding: 2vw 3vw 1vw;
+  position: relative;
+}
+
+#page2-top-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1vw;
+}
+
+#page2-top-content h1 {
+  font-size: 30px;
+  font-weight: 100;
+}
+
+#page2 #intro-text {
+  position: absolute;
+  z-index: 2;
+  background: white;
+  padding-top: 2rem;
+}
+
+#intro-text h1 {
+  font-size: 40px;
+  font-weight: 540;
+}
+
+#intro-text div {
+  background: #fff;
+  width: 100%;
+  height: 90px;
+  position: absolute;
+}
+
+#page3 {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#page3 h1 {
+  font-size: 32px;
+  font-weight: 540;
+}
+
+#page3 #projectDiv {
+  display: flex;
+  gap: 2vw;
+  margin-top: 5rem;
+}
+
+#projectDiv #project1,
+#project2,
+#project3 {
+  max-width: 27vw;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+}
+
+#projectDiv #project1 #project1-img {
+  width: 25vw;
+  height: 13vw;
+  margin-bottom: 0.5rem;
+}
+
+#project1-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+  margin-top: 1rem;
+  position: relative;
+}
+
+#project1 h2 {
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+}
+
+#anchor {
+  padding: 0.1rem 2rem;
+  background-color: #037e89;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#anchor:hover {
+  transform: scale(1.1);
+}
+
+#project1-btn img {
+  width: 32px;
+}
+
+#project2 #project2-img {
+  width: 25vw;
+  height: 13vw;
+  margin-bottom: 0.5rem;
+}
+
+#project2 h2 {
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+}
+
+#projectDiv #project2 {
+  /* position: absolute; */
+  z-index: -1;
+}
+
+#project3 #project3-img {
+  width: 25vw;
+  height: 13vw;
+  margin-bottom: 0.5rem;
+}
+
+#project3 h2 {
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+}
+
+#page4 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.169);
+}
+
+#page4 video {
+  height: 100%;
+  width: 100%;
+}
+
+#page4Cursor {
+  width: 7vw;
+  height: 7vw;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+}
+
+#page4Cursor p {
+  color: white;
+}
+
+#page4 svg {
+  position: absolute;
+  height: 65%;
+}
+
+#page4 form {
+  position: fixed;
+  z-index: 10;
+  /* background: transparent; */
+  border: 1px solid white;
+  padding: 1vw;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#page4 form input {
+  background: rgba(0, 0, 0, 0.368);
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+  border: 1px solid white;
+}
+
+#page4 form button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #037e89;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+}
+
+#page4 form button:hover {
+  cursor: pointer;
+}
+
+#page5 {
+  width: 100%;
+  height: 60vh;
+  padding: 2vw 4vw;
+  /* background-color: red; */
+}
+
+#page5 h1 {
+  font-size: 4vw;
+}
+
+#page5 img {
+  width: 20vw;
+}
+
+#page5-skills {
+  display: flex;
+  gap: 1vw;
+  width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  padding: 2vw 0;
+}
+
+#page6{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    position: relative;
+    color: #fff;
+    padding: 2vw 3vw;
+}
+
+#page6Box1{
+    width: 100%;
+    height: 40vh;
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 2vw 5vw;
+    gap: 12px;
+}
+
+#page6Box1 a{
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+#page6Box1 a:hover{
+    text-decoration: underline;
+    color: red;
+}
+
+#page6Box2{
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page6Box2 h1{
+    color: #fff;
+    font-size: 23vw;
+}
+
+@media (max-width: 970px) {
+  #page1 {
+    height: 60vh;
+  }
+
+  #page2 #intro-text h1 {
+    font-size: 26px;
+  }
+
+  #page2-top-content h1 {
+    font-size: 20px;
+  }
+
+  #intro-text div {
+    height: 15vw;
+    /* background-color: red; */
+  }
+
+  #page3 {
+    /* max-height: 100vh; */
+    margin-top: -15vw;
+  }
+
+  #projectDiv {
+    /* flex-direction: column; */
+    margin-top: 0;
+  }
+
+  #projectDiv #project2 {
+    /* position: absolute; */
+    z-index: -1;
+  }
+
+  #projectDiv .project {
+    width: 45vw;
+    width: 100%;
+  }
+
+  #projectDiv .project h2 {
+    font-size: 16px;
+  }
+
+  #projectDiv .project p {
+    text-align: justify;
+  }
+
+  /* #projectDiv #project3 #project3-img{
+        height: 1vw;
+    } */
+
+  #page4Cursor {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  #projectDiv #project1,
+  #project2,
+  #project3 {
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media (max-width: 787px) {
+  #page4Cursor {
+    width: 12vw;
+    height: 12vw;
+  }
+}
+
+@media (max-width: 740px) {
+  #page2 #page2-top-content {
+    padding: 2vw 3vw 1vw;
+  }
+
+  #page2 #intro-text h1 {
+    font-size: 22px;
+  }
+
+  #page3 {
+    margin-top: -35vw;
+  }
+}
+
+@media (max-width: 396px) {
+    nav{
+        padding: 5vw;
+    }
+
+nav h3{
+    font-size: 16px;
+}
+
+  #page2-top-content h1 {
+    font-size: 14px;
+  }
+
+  #page2 #intro-text h1 {
+    font-size: 18px;
+  }
+
+  #page3 {
+    margin-top: 10vw;
+    min-height: 100vh;
+  }
+
+  #intro-text div {
+    height: 28vw;
+    /* background-color: red; */
+  }
+
+  #projectDiv{
+    flex-direction: column;
+  }
+
+  #page3 h1{
+    font-size: 18px;
+  }
+
+  #projectDiv #project1, #project2, #project3{
+    max-width: 90vw;
+    width: 100%;
+  }
+
+  #page4 svg{
+    height: 55%;
+  }
+
+  #page4Cursor{
+    width: 20vw;
+    height: 20vw;
+  }
+
+  #page5{
+    margin-top: 8vw;
+  }
+
+  #page5 img{
+    width: 20vw;
+    height: 20vw;
+  }
+
+  #page6Box2{
+    height: 30vh;
+    width: 100%;
+  }
+
+  /* #closeTag{
+    right: 35%;
+  } */
+
+}
+
