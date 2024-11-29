@@ -89,7 +89,7 @@ page2Animation();
 
 function page3Animation() {
   gsap.from("#project2", {
-    y: -1300,
+    y: -1400,
     rotate: 360,
     duration: 5,
     scrollTrigger: {
